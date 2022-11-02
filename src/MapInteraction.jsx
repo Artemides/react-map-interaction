@@ -163,6 +163,8 @@ export class MapInteractionControlled extends PureComponent {
   */
 
   onMouseDown(e) {
+    console.log("onMouseDown")
+
     if (!this.props.textIsHovered) {
       e.preventDefault();
       this.setPointerState([e]);
@@ -170,7 +172,8 @@ export class MapInteractionControlled extends PureComponent {
   }
 
   onTouchStart(e) {
-    console.log("touch map")
+    console.log("onTouchStart")
+
     if (!this.props.textIsHovered) {
       e.preventDefault();
       this.setPointerState(e.touches);
@@ -186,6 +189,8 @@ export class MapInteractionControlled extends PureComponent {
   }
 
   onMouseMove(e) {
+    console.log("onMouseMove")
+
     if (!this.props.textIsHovered) {
       if (!this.startPointerInfo || this.props.disablePan) {
         return;
@@ -196,6 +201,8 @@ export class MapInteractionControlled extends PureComponent {
   }
 
   onTouchMove(e) {
+    console.log("onTouchMove")
+
     if (!this.startPointerInfo) {
       return;
     }
@@ -215,6 +222,8 @@ export class MapInteractionControlled extends PureComponent {
 
   // handles both touch and mouse drags
   onDrag(pointer) {
+    console.log("onDrag")
+
     const { translation, pointers } = this.startPointerInfo;
     const startPointer = pointers[0];
     const dragX = pointer.clientX - startPointer.clientX;
@@ -305,6 +314,7 @@ onWheel(e) {
   }
 
   setPointerState(pointers) {
+    console.log("setPointerState")
     if (!pointers || pointers.length === 0) {
       this.startPointerInfo = undefined;
       return;
@@ -353,6 +363,7 @@ onWheel(e) {
   }
 
   scaleFromPoint(newScale, focalPt) {
+    console.log("scaleFromPoint")
     const { translation, scale } = this.props.value;
     const scaleRatio = newScale / (scale != 0 ? scale : 1);
 
@@ -376,7 +387,7 @@ onWheel(e) {
   // to achieve the effect of keeping the content that was directly
   // in the middle of the two fingers as the focal point throughout the zoom.
   scaleFromMultiTouch(e) {
-
+    console.log("scaleFromMultiTouch")
     const startTouches = this.startPointerInfo.pointers;
     const newTouches = e.touches;
 
@@ -447,6 +458,8 @@ onWheel(e) {
 
   // Scale using the center of the content as a focal point
   changeScale(delta) {
+    console.log("changeScale")
+
     const targetScale = this.props.value.scale + delta;
     const { minScale, maxScale } = this.props;
     const scale = clamp(minScale, targetScale, maxScale);
