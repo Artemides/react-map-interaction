@@ -88,6 +88,7 @@ export class MapInteractionControlled extends PureComponent {
   }
 
   componentDidMount() {
+    console.log("Componnent mounting");
     const passiveOption = makePassiveEventOption(false);
 
     this.getContainerNode().addEventListener(
@@ -373,7 +374,7 @@ onWheel(e) {
   // to achieve the effect of keeping the content that was directly
   // in the middle of the two fingers as the focal point throughout the zoom.
   scaleFromMultiTouch(e) {
-    /*
+
     const startTouches = this.startPointerInfo.pointers;
     const newTouches = e.touches;
 
@@ -433,7 +434,7 @@ onWheel(e) {
       scale: newScale,
       translation: this.clampTranslation(newTranslation),
     });
-    */
+    
   }
 
   discreteScaleStepSize() {
