@@ -17,6 +17,7 @@ const MapInteractionCSS = React.memo((props) => {
             width: '100%',
             position: 'relative', // for absolutely positioned children
             overflow: 'hidden',
+            border: 'solid 20px blue'
           };
           if (!props.textIsHovered) {
             wrapperStyle = {
