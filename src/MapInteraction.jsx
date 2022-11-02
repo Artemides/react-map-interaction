@@ -170,6 +170,7 @@ export class MapInteractionControlled extends PureComponent {
   }
 
   onTouchStart(e) {
+    console.log("touch map")
     if (!this.props.textIsHovered) {
       e.preventDefault();
       this.setPointerState(e.touches);
