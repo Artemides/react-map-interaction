@@ -201,7 +201,7 @@ export class MapInteractionControlled extends PureComponent {
   }
 
   onTouchMove(e) {
-    console.log("onTouchMove")
+    console.log("onTouchMovexxxxxyyyyyaaaa")
 
     if (!this.startPointerInfo) {
       return;
@@ -387,7 +387,6 @@ onWheel(e) {
   // to achieve the effect of keeping the content that was directly
   // in the middle of the two fingers as the focal point throughout the zoom.
   scaleFromMultiTouch(e) {
-    console.log("scaleFromMultiTouch")
     const startTouches = this.startPointerInfo.pointers;
     const newTouches = e.touches;
 

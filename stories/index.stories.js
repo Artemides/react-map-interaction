@@ -166,3 +166,12 @@ storiesOf('MapInteractionCSS', module)
       </div>
     )
   })
+  .add('blblb', () => {
+    return (
+      <div style={{ width: 500, height: 500, border: BLUE_BORDER }}>
+        <MapInteractionCSS showControls>
+          <img src={gridImg} style={{ pointerEvents: 'none' }} alt="" />
+        </MapInteractionCSS>
+      </div>
+    )
+  })
