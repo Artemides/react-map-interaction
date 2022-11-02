@@ -241,6 +241,7 @@ export class MapInteractionControlled extends PureComponent {
   }
 
 onWheel(e) {
+    console.log("wheel")
     if (this.props.disableZoom) {
       return;
     }
